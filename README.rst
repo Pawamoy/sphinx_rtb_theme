@@ -13,7 +13,7 @@
 Read the Docs Sphinx Theme
 **************************
 
-.. contents:: 
+.. contents::
 
 View a working demo_ over on readthedocs.org_.
 
@@ -110,7 +110,7 @@ master
 * Hide Edit links on auto created pages
 * Align ``.. centered::`` text to the center
 * Increase contrast for footnotes
-* Add language to the JS output variable 
+* Add language to the JS output variable
 * Include the lato italics font with the theme
 * Fix padding on field lists
 
@@ -256,34 +256,3 @@ This default task will do the following **very cool things that make it worth th
 3. It'll watch for changes to the sass files and build css from the changes.
 4. It'll rebuild the sphinx docs anytime it notices a change to .rst, .html, .js
    or .css files.
-
-Before you create an issue
---------------------------
-
-I don't have a lot of time to maintain this project due to other responsibilities.
-I know there are a lot of Python engineers out there that can't code sass / css and
-are unable to submit pull requests. That said, submitting random style bugs without
-at least providing sample documentation that replicates your problem is a good
-way for me to ignore your request. RST unfortunately can spit out a lot of things
-in a lot of ways. I don't have time to research your problem for you, but I do
-have time to fix the actual styling issue if you can replicate the problem for me.
-
-Releasing the Theme
-===================
-
-When you release a new version,
-you should do the following:
-
-* Bump the version in ``sphinx_rtd_theme/__init__.py`` - we try to follow `semver <http://semver.org/>`_, so be careful with breaking changes.
-* Run a ``grunt build`` to rebuild all the theme assets.
-* Commit that change
-* Tag the release in git: ``git tag $NEW_VERSION``.
-* Push the tag to GitHub: ``git push --tags origin``
-* Upload the package to PyPI: ``python setup.py sdist bdist_wheel upload``
-* In the ``readthedocs.org`` repo, edit the ``bower.json`` file to point at the correct version (``sphinx-rtd-theme": "https://github.com/rtfd/sphinx-rtd-theme.git#$NEW_VERSION"``)
-* In the ``readthedocs.org`` repo, run ``gulp build`` to update the distributed theme files 
-
-TODO
-====
-
-* Separate some sass variables at the theme level so you can overwrite some basic colors.
