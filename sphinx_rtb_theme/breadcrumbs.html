@@ -24,6 +24,10 @@
 {% set display_gitlab = True %}
 {% endif %}
 
+{% if check_meta and 'post_date' in meta %}
+{% set post_date = meta['post_date'] %}
+{% endif %}
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -35,8 +39,9 @@
       <li>{{ title }}</li>
     {% endblock %}
     {% block breadcrumbs_aside %}
-    {#
       <li class="wy-breadcrumbs-aside">
+        {% if post_date %}{{ post_date }}{% endif %}
+      {#
         {% if hasdoc(pagename) %}
           {% if display_github %}
             {% if check_meta and 'github_url' in meta %}
@@ -65,8 +70,8 @@
             <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> {{ _('View page source') }}</a>
           {% endif %}
         {% endif %}
+      #}
       </li>
-    #}
     {% endblock %}
   </ul>
 

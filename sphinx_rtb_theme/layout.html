@@ -8,9 +8,9 @@
 {%- endif %}
 
 {% if check_meta and 'disqus_comments' in meta %}
-{% set disqus_comments = meta['disqus_comments'] %}
+  {% set disqus_comments = meta['disqus_comments'] %}
 {% else %}
-{% set disqus_comments = theme_disqus_comments %}
+  {% set disqus_comments = theme_disqus_comments %}
 {% endif %}
 
 <!DOCTYPE html>

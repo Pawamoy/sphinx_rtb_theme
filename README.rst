@@ -61,3 +61,4 @@ You can currently add the following:
 
 * ``:disqus_comments:`` If True, it will add a Disqus comments thread at the bottom of the page.
   It overrides the ``disqus_comments`` theme option.
+* ``:post_date:`` If set, display the date of the post at the right of the breadcrumbs.
