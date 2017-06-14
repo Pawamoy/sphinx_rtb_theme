@@ -26,7 +26,7 @@ module.exports = function(grunt) {
               expand: true,
               flatten: true,
               src: ['bower_components/font-awesome/fonts/*'],
-              dest: 'sphinx_rtd_theme/static/fonts/',
+              dest: 'sphinx_rtb_theme/static/fonts/',
               filter: 'isFile'
           },
           {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
                     'bower_components/lato-googlefont/Lato-Italic.ttf',
                     'bower_components/lato-googlefont/Lato-Bold.ttf',
                     'bower_components/lato-googlefont/Lato-BoldItalic.ttf'],
-              dest: 'sphinx_rtd_theme/static/fonts/',
+              dest: 'sphinx_rtb_theme/static/fonts/',
               filter: 'isFile'
           },
           {
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
               flatten: true,
               src: ['bower_components/robotoslab-googlefont/RobotoSlab-Bold.ttf',
                     'bower_components/robotoslab-googlefont/RobotoSlab-Regular.ttf'],
-              dest: 'sphinx_rtd_theme/static/fonts/',
+              dest: 'sphinx_rtb_theme/static/fonts/',
               filter: 'isFile'
           },
           {
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
               flatten: true,
               src: ['bower_components/inconsolata-googlefont/Inconsolata-Bold.ttf',
                     'bower_components/inconsolata-googlefont/Inconsolata-Regular.ttf'],
-              dest: 'sphinx_rtd_theme/static/fonts/',
+              dest: 'sphinx_rtb_theme/static/fonts/',
               filter: 'isFile'
           }
         ]
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'sass',
           src: ['*.sass'],
-          dest: 'sphinx_rtd_theme/static/css',
+          dest: 'sphinx_rtb_theme/static/css',
           ext: '.css'
         }]
       },
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'sass',
           src: ['*.sass'],
-          dest: 'sphinx_rtd_theme/static/css',
+          dest: 'sphinx_rtb_theme/static/css',
           ext: '.css'
         }]
       }
@@ -97,7 +97,7 @@ module.exports = function(grunt) {
           }
         },
         src: ['js/*.js'],
-        dest: 'sphinx_rtd_theme/static/js/theme.js'
+        dest: 'sphinx_rtb_theme/static/js/theme.js'
       },
       build: {
         options: {
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
           }
         },
         src: ['js/*.js'],
-        dest: 'sphinx_rtd_theme/static/js/theme.js'
+        dest: 'sphinx_rtb_theme/static/js/theme.js'
       }
     },
 
@@ -121,7 +121,7 @@ module.exports = function(grunt) {
     },
     clean: {
       build: ["demo_docs/build"],
-      fonts: ["sphinx_rtd_theme/static/fonts"]
+      fonts: ["sphinx_rtb_theme/static/fonts"]
     },
 
     watch: {
@@ -132,7 +132,7 @@ module.exports = function(grunt) {
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
-        files: ['sphinx_rtd_theme/**/*', 'demo_docs/**/*.rst', 'demo_docs/**/*.py'],
+        files: ['sphinx_rtb_theme/**/*', 'demo_docs/**/*.rst', 'demo_docs/**/*.py'],
         tasks: ['clean:build','exec:build_sphinx']
       },
       /* JavaScript */

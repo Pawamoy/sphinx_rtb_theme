@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
-"""`sphinx_rtd_theme` lives on `Github`_.
+"""`sphinx_rtb_theme` lives on `Github`_.
 
-.. _github: https://www.github.com/snide/sphinx_rtd_theme
+.. _github: https://github.com/Pawamoy/sphinx_rtb_theme
 
 """
 from setuptools import setup
-from sphinx_rtd_theme import __version__
+from sphinx_rtb_theme import __version__
 
 
 setup(
-    name='sphinx_rtd_theme',
+    name='sphinx_rtb_theme',
     version=__version__,
-    url='https://github.com/rtfd/sphinx_rtd_theme/',
+    url='https://github.com/Pawamoy/sphinx_rtb_theme',
     license='MIT',
-    author='Dave Snider',
-    author_email='dave.snider@gmail.com',
-    description='Read the Docs theme for Sphinx',
+    author='Timothee Mazzucotelli',
+    author_email='timothee.mazzucotelli@gmail.com',
+    description='ReadTheBlog theme for Sphinx (ReadTheDoc theme fork).',
     long_description=open('README.rst').read(),
     zip_safe=False,
-    packages=['sphinx_rtd_theme'],
-    package_data={'sphinx_rtd_theme': [
+    packages=['sphinx_rtb_theme'],
+    package_data={'sphinx_rtb_theme': [
         'theme.conf',
         '*.html',
         'static/css/*.css',
@@ -43,4 +43,9 @@ setup(
         'Topic :: Documentation',
         'Topic :: Software Development :: Documentation',
     ],
+    entry_points = {
+        'sphinx.html_themes': [
+            'sphinx_rtb_theme = sphinx_rtb_theme',
+        ]
+    }
 )

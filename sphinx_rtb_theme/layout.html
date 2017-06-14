@@ -7,6 +7,12 @@
   {%- set titlesuffix = "" %}
 {%- endif %}
 
+{% if check_meta and 'disqus_comments' in meta %}
+{% set disqus_comments = meta['disqus_comments'] %}
+{% else %}
+{% set disqus_comments = theme_disqus_comments %}
+{% endif %}
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -85,6 +91,10 @@
 
 <body class="wy-body-for-nav" role="document">
 
+  <div class="banner">
+    <h1>{{ project }}</h1>
+  </div>
+
   {% block extrabody %} {% endblock %}
   <div class="wy-grid-for-nav">
 
@@ -106,6 +116,7 @@
           {% endif %}
           </a>
 
+          {#
           {% if theme_display_version %}
             {%- set nav_version = version %}
             {% if READTHEDOCS and current_version %}
@@ -117,6 +128,7 @@
               </div>
             {% endif %}
           {% endif %}
+          #}
 
           {% include "searchbox.html" %}
 
@@ -166,6 +178,9 @@
             {% block comments %}{% endblock %}
            </div>
           </div>
+          {% if disqus_comments %}
+            <div id="disqus_thread"></div>
+          {% endif %}
           {% include "footer.html" %}
         </div>
       </div>
@@ -206,6 +221,27 @@
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
+  {% endif %}
+
+  {% if disqus_comments %}
+
+    <script>
+      var disqus_config = function () {
+        this.page.url = window.location.href.replace(/\?.*/, '');
+        this.page.identifier = "{{ title }}";
+        this.page.title = "{{ title }}";
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//{{ theme_disqus_username }}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
   {% endif %}
 
   {%- block footer %} {% endblock %}
