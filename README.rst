@@ -10,10 +10,17 @@ A fork of Sphinx Read The Docs theme, but for blogs.
 - Fluid layout
 - Optional Disqus threads
 
+See a base blog using this theme at https://github.com/Pawamoy/readtheblog.
+
+.. image:: https://user-images.githubusercontent.com/3999221/27185918-0eafda0e-51e7-11e7-8e12-87d6debc992b.png
+    :alt: Screenshot
+
 Installation
 ============
 
-Not yet.
+..
+
+    pip install git+https://github.com/Pawamoy/sphinx_rtb_theme.git
 
 Usage
 =====
